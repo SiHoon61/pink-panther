@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { TextGradientScroll } from '@/components/ui/TextGradientScroll';
+import { TextRevealByWord } from '@/components/ui/TextReveal';
 
 function AboutPanel() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -63,6 +64,12 @@ function AboutPanel() {
       </div>
       <div className="flex h-screen w-full items-center justify-center bg-white text-7xl font-bold">
         <TextGradientScroll text="bye" />
+        {/* <TextRevealByWord
+          text="            침해다 모르고 사이에서 비하는 쌀으로 계획의 임신도 저기와 가능하다.
+            드릴 일쑤한테 칸이 잠을 없이 것 의하다. 정신권은 아저씨를 다 23일,
+            부전공에 일단 조리를 믿음이라, 애정에 는다. 우르르 말부터 대체, 옆이
+            태어난지. 사실이니 회사가 헌금이라고, 본 간단히, 같다."
+        /> */}
       </div>
     </>
   );
