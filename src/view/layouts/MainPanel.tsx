@@ -1,12 +1,12 @@
-import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import { Bottom } from "@/view/layouts/Bottom";
-import { Button } from "@/components/ui/button";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { Bottom } from '@/view/layouts/Bottom';
+import { Button } from '@/components/ui/button';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 function MainPanel() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const pathArr = ["/process", "/", "/about"];
+  const pathArr = ['/process', '/', '/about'];
 
   const currentIndex = pathArr.indexOf(pathname);
   const isFirst = currentIndex === 0;
@@ -26,36 +26,38 @@ function MainPanel() {
 
   return (
     <div>
-      <div className="w-full h-screen  ">
-        {/* <div
-          className="absolute top-[30%] left-0 w-32 h-96 flex items-center justify-start group cursor-pointer"
+      <div className="h-full w-full bg-red-200">
+        <div
+          className="group fixed left-0 top-[30%] z-50 flex h-96 w-32 cursor-pointer items-center justify-start"
           onClick={handlePrevClick}
         >
-          <Button
-            className="ml-6 opacity-30 group-hover:opacity-100 transition-opacity pointer-events-none"
-            variant="outline"
-            size="icon"
-            hidden={isFirst}
-          >
-            <ChevronLeft />
-          </Button>
-        </div> */}
+          {!isFirst && (
+            <Button
+              className="pointer-events-none ml-6 opacity-30 transition-opacity group-hover:opacity-100"
+              variant="outline"
+              size="icon"
+            >
+              <ChevronLeft />
+            </Button>
+          )}
+        </div>
         <Outlet />
-        {/* <div
-          className="absolute top-[30%] right-0 w-32 h-96 flex items-center justify-end group cursor-pointer"
+        <div
+          className="group fixed right-0 top-[30%] z-50 flex h-96 w-32 cursor-pointer items-center justify-end"
           onClick={handleNextClick}
         >
-          <Button
-            className="mr-6 opacity-30 group-hover:opacity-100 transition-opacity pointer-events-none "
-            variant="outline"
-            size="icon"
-            hidden={isLast}
-          >
-            <ChevronRight />
-          </Button>
-        </div> */}
+          {!isLast && (
+            <Button
+              className="pointer-events-none mr-6 opacity-30 transition-opacity group-hover:opacity-100"
+              variant="outline"
+              size="icon"
+            >
+              <ChevronRight />
+            </Button>
+          )}
+        </div>
       </div>
-      {/* <Bottom /> */}
+      <Bottom />
     </div>
   );
 }

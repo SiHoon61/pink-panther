@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 function Bottom() {
-  return <div className="w-full h-36 bg-black">Bottom</div>;
+  return <div className="h-36 w-full bg-black text-white">Bottom</div>;
 }
 
 export { Bottom };
