@@ -26,7 +26,7 @@ function MainPanel() {
 
   return (
     <div>
-      <div className="w-full h-screen  bg-red-700">
+      <div className="w-full h-screen  ">
         {/* <div
           className="absolute top-[30%] left-0 w-32 h-96 flex items-center justify-start group cursor-pointer"
           onClick={handlePrevClick}
