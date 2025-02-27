@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { TextGradientScroll } from '@/components/ui/TextGradientScroll';
 
 function AboutPanel() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -61,7 +62,7 @@ function AboutPanel() {
         </div>
       </div>
       <div className="flex h-screen w-full items-center justify-center bg-white text-7xl font-bold">
-        bye
+        <TextGradientScroll text="bye" />
       </div>
     </>
   );
